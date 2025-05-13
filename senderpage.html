@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charlton's Angels</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Borel&family=Lexend:wght@100..900&display=swap');
+    body {
+      font-family: 'Playfair Display', serif;
+      padding: 20px;
+      padding-top: 80px;
+      color: #333;
+      background: url('https://www.example.com/bakery-background.jpg') no-repeat center center fixed,
+                  linear-gradient(to right, #f6c8d2,#ffe9ed, #fcc2df);
+      background-size: cover;
+      cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='32' width='32'><text y='22' font-size='22'>🎂</text></svg>") 0 0, auto;
+      text-align: center;
+    }
+
+  
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #f75284;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      z-index: 999;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      font-weight: 800;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      background-color: #ff69a3;
+      border-radius: 10px;
+      font-size: 50px;
+    }
+
+    h4{
+      font-family: "Borel", cursive;
+     font-weight: 700;
+      color: #f75397;
+      margin-right: 120px;
+      margin-left: 120px;
+      padding:5px;
+      padding-top: 20px;
+      text-align: center;
+      text-shadow: 0px 0px 5px rgba(230, 65, 142, 0.6);
+      background-color: #ffffff;
+      box-shadow: 4px 4px 2px rgba(230, 65, 142, 0.6) ;
+      border-radius: 10px;
+      font-size: 30px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .cart {
+      width: 30%;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: rgba(255, 245, 248, 0.9);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 2px solid #ff69b4;
+    }
+
+    .checkout {
+      width: 70%;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: rgba(255, 245, 248, 0.9);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 2px solid #ff69b4;
+    }
+
+    .cart h2, .checkout h3 {
+      color: #d63384;
+      text-align: center;
+    }
+
+    .cart-item {
+      margin: 5px 0;
+      padding: 10px;
+      background-color: rgba(255, 235, 240, 0.8);
+      border: 1px solid #ffb6c1;
+      border-radius: 5px;
+    }
+
+    .cart-item button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 3px 8px;
+      margin-left: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .cart-item button:hover {
+      background-color: #d63384;
+    }
+
+    form {
+      margin-top: 20px;
+      background-color: #ffeaf4;
+      padding: 15px;
+      border: 2px solid #ff69b4;
+      border-radius: 10px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    form input {
+      width: 100%;
+      padding: 6px;
+      margin-top: 4px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      margin-top: 10px;
+      background-color: #ff69b4;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #d63384;
+    }
+
+    .product {
+      border: 2px solid #ffffff;
+      background-color: rgb(255, 254, 254);
+      box-shadow: 2px 2px 2px rgba(82, 23, 48, 0.555);
+      padding: 10px;
+      margin: 15px;
+      display: inline-block;
+      width: 180px;
+      border-radius: 10px;
+      vertical-align: top;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .product button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .product button:hover {
+      background-color: #d63384;
+    }
+
+    .category {
+      margin-top: 20px;
+    }
+
+    .card-container .col {
+        padding: 10px;
+        margin-bottom: 20px;  
+    }
+
+    .card-img-top {
+        width: 170px;
+        object-fit: cover;
+    }
+
+    
+  </style>
+</head>
+<body id="top">
+
+
+  <nav class="navbar">
+    <a href="#top">Home</a>
+    <a href="DEVELOPERS PAGE.html">Developers</a>
+  </nav>
+
+
+  <h1>-------------Charlton's Angels & Delights-------------</h1>
+
+  <div id="catalog">
+    
+    <div class="category" id="desserts">
+      <h4>Cookies</h4>
+      <div class="row">
+        <div class="product" prod_name="Shadow Milk Cookie" prod_price="60">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/SMC.png" alt="Cookie" class="card-img-top" style="text-align: center;">
+            </div>
+            Shadow Milk <br> Cookie <hr> Php 60.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+      
+        <div class="product" prod_name="Double Chunk Chocolate Cookie" prod_price="50">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/dccc.jpg" alt="Cookie" class="card-img-top" style="text-align: center;">
+            </div>
+            Double Chunk Chocolate Cookie <hr> Php 50.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Red Velvet Cookie" prod_price="50">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/rvc.jpg" alt="Cookie" class="card-img-top" style="text-align: center;">
+            </div>
+            Red Velvet <br> Cookie <hr> Php 50.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Pure Vanilla Cookie" prod_price="60">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/PVC.jpg" alt="Cookie" class="card-img-top" style="text-align: center;">
+            </div>
+            Pure Vanilla <br> Cookie <hr> Php 60.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Peanut Butter Cookie" prod_price="50">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/pbc.jpg" alt="Cookie" class="card-img-top" style="text-align: center;">
+            </div>
+            Peanut Butter <br> Cookie <hr> Php 50.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Matcha Cookie" prod_price="50">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/mc.jpg" alt="Cookie" class="card-img-top" style="text-align: center;">
+            </div>
+            Matcha <br> Cookie <hr> Php 50.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Eternal Sugar Cookie" prod_price="60">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/ESC.jpg" alt="Cookie" class="card-img-top" style="text-align: center;">
+            </div>
+            Eternal Sugar <br> Cookie <hr> Php 60.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+      </div>
+
+      <h4>Brownies</h4>
+      <div class="row">
+        <div class="product" prod_name="Classic Fudge Brownie" prod_price="60">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/CCBB.webp" alt="Brownie" class="card-img-top" style="text-align: center;">
+            </div>
+            Classic Fudge Brownie <hr> Php 60.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        
+        <div class="product" prod_name=" Toasted Walnut Brownie" prod_price="50">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/WBB.jpg" alt="Brownie" class="card-img-top" style="text-align: center;">
+            </div>
+            Toasted Walnut Brownie <hr> Php 50.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Cheesecake Swirl Brownie" prod_price="60">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/CSB.jpg" alt="Brownie" class="card-img-top" style="text-align: center;">
+            </div>
+            Cheesecake Swirl Brownie <hr> Php 60.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        
+        <div class="product" prod_name="Golden Blondie Brownie" prod_price="50">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/BBB.jpg" alt="Brownie" class="card-img-top" style="text-align: center;">
+            </div>
+            Golden Blondie Brownie <hr> Php 50.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        
+        <div class="product" prod_name="Mint Chocolate Brownie" prod_price="60">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/MCCB.webp" alt="Brownie" class="card-img-top" style="text-align: center;">
+            </div>
+            Mint Chocolate Brownie <hr> Php 60.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        
+        <div class="product" prod_name="Peanut Butter Brownie" prod_price="50">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/PBCB.jpg" alt="Brownie" class="card-img-top" style="text-align: center;">
+            </div>
+            Peanut Butter Brownie <hr> Php 50.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Chocolate Chip Brownie" prod_price="60">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/CCB.jpg" alt="Brownie" class="card-img-top" style="text-align: center;">
+            </div>
+            Chocolate Chip Brownie <hr> Php 60.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+
+  <h4>Muffins</h4>
+      <div class="row">
+        <div class="product" prod_name="Blueberry Crumble Muffin" prod_price="70">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/BMM.jpg" alt="Muffin" class="card-img-top" style="text-align: center;">
+            </div>
+            Blueberry Crumble Muffin <hr> Php 70.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Chocolate Chip Muffin" prod_price="80">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/DCCM.jpg" alt="Muffin" class="card-img-top" style="text-align: center;">
+            </div>
+            Chocolate Chip Muffin <hr> Php 80.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Ripe Banana Muffin" prod_price="70">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/RBM.jpg" alt="Muffin" class="card-img-top" style="text-align: center;">
+            </div>
+            Ripe Banana <br> Muffin <hr> Php 70.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Apple Cinnamon Muffin" prod_price="80">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/ACM.jpg" alt="Muffin" class="card-img-top" style="text-align: center;">
+            </div>
+            Apple Cinnamon Muffin <hr> Php 80.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Cranberry Orange Muffin" prod_price="70">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/OCM.webp" alt="Muffin" class="card-img-top" style="text-align: center;">
+            </div>
+            Cranberry Orange Muffin <hr> Php 70.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Cinnamon Streusel Muffin" prod_price="80">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/CSM.jpg" alt="Muffin" class="card-img-top" style="text-align: center;">
+            </div>
+            Cinnamon Streusel Muffin <hr> Php 80.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Lemon Poppyseed Muffin" prod_price="70">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/LPSM.jpg" alt="Brownie" class="card-img-top" style="text-align: center;">
+            </div>
+            Lemon Poppyseed Muffin <hr> Php 70.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+    <h4>Cakes</h4>
+      <div class="row">
+
+        <div class="product" prod_name="Rich Chocolate Cake" prod_price="780">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/rcc.jpg" alt="Cake" class="card-img-top" style="text-align: center;">
+            </div>
+            Rich Chocolate <br>  Cake <hr> Php 780.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Vanilla Bean Cake" prod_price="720">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/vbc.webp" alt="Cake" class="card-img-top" style="text-align: center;">
+            </div>
+            Vanilla Bean <br>  Cake <hr> Php 720.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+                
+        <div class="product" prod_name="Red Velvet Cake" prod_price="840">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/rvcc.jpg" alt="Cake" class="card-img-top" style="text-align: center;">
+            </div>
+            Red Velvet <br>  Cake <hr> Php 840.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Spiced Carrot Cake" prod_price="680">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/scc.jpg" alt="Cake" class="card-img-top" style="text-align: center;">
+            </div>
+            Spiced Carrot <br>  Cake <hr> Php 680.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Strawberry Shortcake Cake" prod_price="780">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/ssc.jpg" alt="Cake" class="card-img-top" style="text-align: center;">
+            </div>
+            Strawberry Shortcake Cake <hr> Php 780.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Marble Swirl Cake" prod_price="720">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/msc.jpg" alt="Cake" class="card-img-top" style="text-align: center;">
+            </div>
+            Marble Swirl <br>  Cake <hr> Php 720.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" prod_name="Lemon Glaze Cake" prod_price="820">
+          <div class="card">
+            <div class="card-container">
+              <img src="csstuff/lgc.jpg" alt="Cake" class="card-img-top" style="text-align: center;">
+            </div>
+            Lemon Glaze <br>  Cake <hr> Php 820.00 <br>
+          </div>
+          <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+
+  
+
+
+  <div class="content">
+    <div class="cart">
+      <h2>Shopping Cart</h2>
+      <div id="cart-items"></div>
+      <p>Total: Php <span id="total">0</span></p>
+    </div>
+
+
+    <div class="checkout">
+      <h2>Checkout</h2>
+        <form id="checkout-form" action="http://47.129.9.35/cs3/checkout.php" method="post" onsubmit="return prepareCheckout();">
+        <label>Name: <input type="text" name="cust_name" required></label>
+        <label>Address: <input type="text" name="cust_addr" required></label>
+        <label>Email: <input type="email" name="cust_email" required></label>
+        <input type="hidden" name="cust_order" id="cust_order">
+        <button type="submit">Submit Order</button>
+      </form>
+    </div>
+  </div>
+
+
+  <script>
+    let cart = [];
+
+    function addToCart(button) {
+      const productDiv = button.parentElement;
+      const name = productDiv.getAttribute('prod_name');
+      const price = parseFloat(productDiv.getAttribute('prod_price'));
+      const item = { prod_name: name, prod_price: price };
+      cart.push(item);
+      updateCart();
+    }
+
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+    
+
+    function updateCart() {
+      const cartItemsDiv = document.getElementById('cart-items');
+      const totalSpan = document.getElementById('total');
+      cartItemsDiv.innerHTML = '';
+      let total = 0;
+
+
+      cart.forEach((item, index) => {
+        total += item.prod_price;
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `${item.prod_name} - Php ${item.prod_price}
+          <button onclick="removeFromCart(${index})">Remove</button>`;
+        cartItemsDiv.appendChild(div);
+      });
+
+
+      totalSpan.textContent = total.toFixed(2);
+    }
+
+    function prepareCheckout() {
+      const orderInput = document.getElementById('cust_order');
+      orderInput.value = JSON.stringify(cart);
+      return true;
+    }
+    
+  </script>
+</body>
+</html>
+
+
+

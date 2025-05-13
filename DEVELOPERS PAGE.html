@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developers Page</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Borel&family=Lexend:wght@100..900&display=swap');
+
+        body {
+            font-family: 'Press Start 2P', sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            background-color: #f391b2;
+            background-image: url('BACKGROUND.jpg');
+        }
+        header {
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 70px;
+            font-family: "Borel", cursive;
+            color: #f7e6ec;
+            text-shadow: 0px 0px 4px rgb(255, 72, 127);
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        .team-section, .cheat-sheet, .references {
+            font-family: "Lexend", sans-serif;
+            background-color: #f7e6ec;
+            border-radius: 10px;
+            padding: 10px;
+            margin-right: 120px;
+            margin-left: 120px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .team-section h2, .cheat-sheet h2, .references h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .team-section p, .cheat-sheet p, .references p {
+            font-size: 1.2em;
+        }
+        .cheat-sheet ul, .references ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .cheat-sheet li, .references li {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        .developer {
+            margin: 30px 0;
+            display: inline-block;
+            text-align: center;
+            width: 30%;
+        }
+        .developer img {
+            width: 200px;
+            height: 200px;
+            border-radius: 20%;
+            margin-bottom: 15px;
+        }
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-media a {
+            font-size: 2em;
+            color: #333;
+        }
+        .social-media a:hover {
+            color: #FF5722;
+        }
+
+        .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #f75284;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      z-index: 999;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    </style>
+    <script>
+        document.addEventListener("mousedown", (e) => {
+            let sound_name = new Audio("greenhouse/sbar.mp3");sound_name.play()});
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="senderpage.html">Home</a>
+        <a href="DEVELOPERS PAGE.html">Developers</a>
+      </nav>
+
+    <header>
+        <h1>About the Company</h1>
+    </header>
+
+    <!-- Team Members Section -->
+    <section class="team-section">
+        <h2>Meet the Team</h2>
+        <p>Our team of passionate developers and bakers worked hard to bring the Charlton's Angel and Delights to life! Here's a brief introduction to the creators:</p>
+
+        <div class="developer">
+            <img src="maxx.jpg" alt="Maxeen Tambonco">
+            <h3>Maxeen Tambonco - Developer 1</h3>
+            <div class="info">
+                Main Page
+            </div>
+        </div>
+
+        <div class="developer">
+            <img src="eyan.jpg" alt="Eianne Cadiente">
+            <h3>Eianne Cadiente - Developer 2</h3>
+            <div class="info">
+                Developers Page<br>
+                Main Page
+            </div>
+        </div>
+
+        <div class="developer">
+            <img src="carcon.jpg" alt="Charlton Peralta">
+            <h3>Charlton Peralta - Developer 3</h3>
+            <div class="info">
+                <div class="info">
+                    Checkout<br>
+                    Main Page
+                </div>
+        </div>
+    </section>
+
+    <!-- Cheat Sheet for Endings Section -->
+    <section class="cheat-sheet">
+        <h2>Recipes</h2>
+        <p>Make our chocolate chip cookie from scratch!<br><br></p>
+        <ul>
+            <li><strong>Chocolate Chip Cookie</strong> <br>2 and 1/4 cups (281g) all-purpose flour (spooned & leveled)<br>
+                1 teaspoon baking soda <br>
+                1 and 1/2 teaspoons cornstarch<br>
+                1/2 teaspoon salt <br>
+                3/4 cup (170g/12 Tbsp) unsalted butter, melted & cooled for 5 minutes <br>
+                3/4 cup (150g) packed light or dark brown sugar <br>
+                1/2 cup (100g) granulated sugar <br>
+                1 large egg + 1 egg yolk, at room temperature <br>
+                2 teaspoons pure vanilla extract <br>
+                1 and 1/4 cups (225g) semi-sweet chocolate chips or chocolate chunks<br><br><br></li>
+        </ul>
+        <p>Use this guide to make your own homemade cookies</p>
+    </section>
+
+    <!-- References Section -->
+    <section class="references">
+        <h2>References & Inspiration</h2>
+        <p>We are grateful to the following individuals and resources that helped inspire and shape this project:</p>
+        <ul>
+            <li><strong>Lexend Font:</strong> Used for the retro, cute vibe for the Bakeshop. Available from Google Fonts.</li>
+            <li><strong>Images:</strong> Images from Google</li>
+        </ul>
+        <p>Thank you to all those who have contributed to this project in any way!</p>
+    </section>
+</body>
+</html>
